@@ -377,9 +377,9 @@ tbody td{padding:11px 13px;color:var(--navy);vertical-align:middle;}
       <table id="ctrlTable">
         <thead>
           <tr>
-            <th>W.O</th><th>Cliente</th><th>Ceco</th><th>Familia</th>
+            <th>W.O</th><th>Estado Registro</th><th>Cliente</th><th>Ceco</th><th>Familia</th>
             <th>Descripción OT</th><th>Usuario</th><th>Fecha Apertura</th>
-            <th>Prioridad</th><th>Estado Registro</th>
+            <th>Prioridad</th>
           </tr>
         </thead>
         <tbody id="ctrlBody">
@@ -505,6 +505,7 @@ function renderTable(tickets) {
     else if (er === 'pendiente') { badgeClass='est-pend'; badgeText='● Pendiente'; }
     return `<tr>
       <td class="td-wo">${esc(t.wo)}</td>
+      <td><span class="badge-est ${bc}">${bt}</span></td>
       <td>${esc(t.cliente)}</td>
       <td class="td-trunc" title="${esc(t.ceco)}">${esc(t.ceco)}</td>
       <td class="td-trunc" title="${esc(t.familia)}">${esc(t.familia)}</td>
