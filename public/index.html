@@ -503,6 +503,8 @@ function renderTable(tickets) {
     let badgeClass = 'est-empty', badgeText = t.estado_reg || '—';
     if (er === 'registrado') { badgeClass='est-reg'; badgeText='● Registrado'; }
     else if (er === 'pendiente') { badgeClass='est-pend'; badgeText='● Pendiente'; }
+    const bc = badgeClass;
+    const bt = badgeText;
     return `<tr>
       <td class="td-wo">${esc(t.wo)}</td>
       <td><span class="badge-est ${bc}">${bt}</span></td>
@@ -513,7 +515,6 @@ function renderTable(tickets) {
       <td class="td-trunc" title="${esc(t.usuario)}">${esc(t.usuario)}</td>
       <td style="white-space:nowrap">${esc(t.fecha)}</td>
       <td>${esc(t.prioridad)}</td>
-      <td><span class="badge-est ${badgeClass}">${badgeText}</span></td>
     </tr>`;
   }).join('');
 }
