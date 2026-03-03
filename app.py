@@ -201,7 +201,7 @@ def get_control():
                 'prioridad':   s(r[15]),
                 'cliente':     s(r[16]),
                 # Columna 18 = índice 17 = Estado Registro (manual)
-                'estado_reg':  s(r[17]) if len(r) > 17 else ''
+                'estado_reg':  s(r[27]) if len(r) > 27 else ''
             })
         tickets.reverse()  # más recientes primero
         return jsonify({'tickets': tickets})
